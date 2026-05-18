@@ -13,7 +13,7 @@ from src.download.image_downloader import download_image
 OUTPUT_DIR = "data/images/sequential"
 
 
-def run(limit=10):
+def run(limit=10, workers=1):
     """
     Executa download sequencial das imagens.
     """

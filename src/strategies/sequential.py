@@ -1,4 +1,5 @@
 import os
+from src.utils.file_utils import clear_directory
 
 from src.api.pokeapi import (
     get_pokemon_list,
@@ -16,6 +17,8 @@ def run(limit=10):
     """
     Executa download sequencial das imagens.
     """
+
+    clear_directory(OUTPUT_DIR)
 
     pokemons = get_pokemon_list(limit)
 

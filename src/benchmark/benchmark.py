@@ -37,11 +37,20 @@ def benchmark(
 
         print(f"Execution {execution}...")
 
-        execution_time = measure_execution_time(
-            strategy_function,
-            limit,
-            workers
-        )
+        if workers == 1:
+
+            execution_time = measure_execution_time(
+                strategy_function,
+                limit
+            )
+
+        else:
+
+            execution_time = measure_execution_time(
+                strategy_function,
+                limit,
+                workers
+            )
 
         execution_times.append(execution_time)
 

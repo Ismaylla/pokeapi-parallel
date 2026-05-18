@@ -4,6 +4,8 @@ from src.strategies.threading_strategy import (run as threading_run)
 
 from src.strategies.multiprocessing_strategy import (run as multiprocessing_run)
 
+from src.strategies.futures_strategy import (run as futures_run)
+
 from src.benchmark.benchmark import (benchmark, clear_results_file)
 
 if __name__ == "__main__":
@@ -28,9 +30,18 @@ if __name__ == "__main__":
     # )
 
     # MULTIPROCESSING
+    # benchmark(
+    #     strategy_name="multiprocessing",
+    #     strategy_function=multiprocessing_run,
+    #     limit=100,
+    #     repetitions=10,
+    #     workers=8
+    # )
+
+    # FUTURES
     benchmark(
-        strategy_name="multiprocessing",
-        strategy_function=multiprocessing_run,
+        strategy_name="futures",
+        strategy_function=futures_run,
         limit=100,
         repetitions=10,
         workers=8

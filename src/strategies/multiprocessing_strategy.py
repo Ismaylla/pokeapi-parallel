@@ -55,7 +55,7 @@ def worker(queue):
             print(f"Error processing pokemon: {error}")
 
 
-def run(limit=10, num_processes=4):
+def run(limit=10, workers=4):
     """
     Executa download usando multiprocessing.
     """
@@ -69,7 +69,7 @@ def run(limit=10, num_processes=4):
 
     processes = []
 
-    for index in range(num_processes):
+    for index in range(workers):
 
         process = multiprocessing.Process(
             target=worker,
